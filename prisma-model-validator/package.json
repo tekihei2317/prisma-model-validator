@@ -1,3 +1,14 @@
 {
-  "name": "@tekihei2317/prisma-model-validator"
+  "name": "@tekihei2317/prisma-model-validator",
+  "version": "0.0.1",
+  "main": "lib/index.ts",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "tekihei2317",
+  "license": "MIT"
 }
