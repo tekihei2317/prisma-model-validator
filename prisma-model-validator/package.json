@@ -10,5 +10,8 @@
     "lib/**/*"
   ],
   "author": "tekihei2317",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
