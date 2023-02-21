@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "node-script",
+  "version": "1.0.0",
+  "scripts": {
+    "test": ""
+  },
+  "devDependencies": {
+    "prisma": "^4.10.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.10.1",
+    "@tekihei2317/prisma-model-validator": "*"
+  }
+}
