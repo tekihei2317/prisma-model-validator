@@ -1,0 +1,25 @@
+name: "ci"
+on:
+  push:
+jobs:
+  lint_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+          key: ${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+      - run: yarn install
+      - run: cd prisma-model-validator && cp .env.example .env && yarn run prisma migrate dev
+      - run: yarn workspace @tekihei2317/prisma-model-validator build
+      # TODO: 複数スキーマの場合の良い方法を調べる
+      - run: yarn workspace nodejs-script prisma generate
+      - run: yarn run lint
+      - run: yarn workspace @tekihei2317/prisma-model-validator prisma generate
+      - run: yarn run test --coverage
+      - uses: codecov/codecov-action@v3
