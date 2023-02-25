@@ -6,7 +6,9 @@
     "examples/*"
   ],
   "scripts": {
-    "lint:prettier": "prettier --check '**/*/*.{ts,tsx}'",
+    "lint": "yarn run lint:tsc && yarn run lint:prettier",
+    "lint:tsc": "tsc --noEmit",
+    "lint:prettier": "prettier --check '**/*/*.{ts,tsx}' --ignore-path .gitignore",
     "test": "jest"
   },
   "devDependencies": {

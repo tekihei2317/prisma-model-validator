@@ -22,28 +22,6 @@ async function createUser(input: CreateUserInput): Promise<User> {
   })
 }
 
-type UpdateUserInput = {
-  id: number
-  email: string
-  name: string
-}
-
-async function updateUser(input: UpdateUserInput): Promise<User> {
-  const userValidator = modelValidator(prisma.user)
-
-  if (await userValidator.exists({ email: input.email, id: { not: input.id } })) {
-    throw new Error(`Email ${input.email} is already used.`)
-  }
-
-  return await prisma.user.update({
-    where: { id: input.id },
-    data: {
-      email: input.email,
-      name: input.name,
-    },
-  })
-}
-
 type CreatePostInput = {
   userId: number
   slug: string

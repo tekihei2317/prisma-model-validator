@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "node-script",
+  "name": "nodejs-script",
   "version": "1.0.0",
   "scripts": {
     "test": ""
