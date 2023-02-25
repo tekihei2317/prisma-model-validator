@@ -1,3 +1,4 @@
 node_modules
 prisma-model-validator/lib
 yarn-error.log
+coverage

@@ -21,4 +21,5 @@ jobs:
       - run: yarn workspace nodejs-script prisma generate
       - run: yarn run lint
       - run: yarn workspace @tekihei2317/prisma-model-validator prisma generate
-      - run: yarn run test
+      - run: yarn run test --coverage
+      - uses: codecov/codecov-action@v3

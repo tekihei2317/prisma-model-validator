@@ -2,4 +2,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: '@quramy/jest-prisma-node/environment',
+  testMatch: ['**/*.test.ts'],
 }
