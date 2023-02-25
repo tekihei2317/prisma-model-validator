@@ -4,7 +4,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   },
   "files": [
     "lib/**/*"
@@ -13,5 +14,10 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@quramy/jest-prisma-node": "^1.4.0",
+    "prisma": "^4.10.1"
   }
 }

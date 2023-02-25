@@ -48,7 +48,7 @@ const isUnique = await postValidator.isUnique({ userId: input.userId, slug: inpu
 
 ```ts
 const userValidator = modelValidator(prisma.user)
-const isUnique = userValidator.isUnique({ email: 'alice@example.com', id: { isNot: 1 } })
+const isUnique = userValidator.isUnique({ email: 'alice@example.com', id: { not: 1 } })
 ```
 
 ### 存在性の確認
